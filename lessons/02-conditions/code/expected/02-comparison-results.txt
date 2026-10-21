@@ -1,0 +1,5 @@
+60000 >= 50000: true
+49999 >= 50000: false
+50000 >= 50000: true
+quantity == 2: true
+quantity != 2: false
