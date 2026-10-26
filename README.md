@@ -14,13 +14,14 @@
 | 8강 · List·Map과 장바구니 | [Main.java](lesson-08/src/main/java/study/javaorder/Main.java) · [Cart.java](lesson-08/src/main/java/study/javaorder/Cart.java) · [ProductCatalog.java](lesson-08/src/main/java/study/javaorder/ProductCatalog.java) |
 | 9강 · equals·hashCode·Set | [Main.java](lesson-09/src/main/java/study/javaorder/Main.java) · [Product.java](lesson-09/src/main/java/study/javaorder/Product.java) · [ProductCatalog.java](lesson-09/src/main/java/study/javaorder/ProductCatalog.java) |
 | 10강 · 예외 처리 | [Main.java](lesson-10/src/main/java/study/javaorder/Main.java) · [OrderItem.java](lesson-10/src/main/java/study/javaorder/OrderItem.java) · [OrderService.java](lesson-10/src/main/java/study/javaorder/OrderService.java) · [Order.java](lesson-10/src/main/java/study/javaorder/Order.java) |
+| 11강 · 인터페이스로 할인 규칙 교체 | [Main.java](lesson-11/src/main/java/study/javaorder/Main.java) · [DiscountPolicy.java](lesson-11/src/main/java/study/javaorder/DiscountPolicy.java) · [NoDiscountPolicy.java](lesson-11/src/main/java/study/javaorder/NoDiscountPolicy.java) · [ThresholdFixedDiscountPolicy.java](lesson-11/src/main/java/study/javaorder/ThresholdFixedDiscountPolicy.java) · [OrderService.java](lesson-11/src/main/java/study/javaorder/OrderService.java) |
 
 [전체 코드 ZIP 다운로드](https://github.com/timulys/java-basics-practical/archive/refs/heads/main.zip)
 
 ## 실행 방법
 
 1. ZIP을 내려받아 압축을 풉니다.
-2. IntelliJ에서 실습할 강의 폴더(`lesson-01`부터 `lesson-10`까지)를 엽니다.
+2. IntelliJ에서 실습할 강의 폴더(`lesson-01`부터 `lesson-11`까지)를 엽니다.
 3. 프로젝트 SDK와 Gradle JVM을 **Java 21**로 맞춘 뒤 `src/main/java/study/javaorder/Main.java`를 실행합니다.
 
 1강은 상품 금액 **60000원**, 2강은 최종 금액 **55000원**, 3강과 4강은 최종 금액 **45000원**, 5강과 6강은 상품 금액 **75000원**과 최종 금액 **70000원**이 나옵니다. 6강은 참조·문자열 비교 결과와 null을 포함한 코드 입력 7개의 안내도 출력합니다. 7강도 기본 주문의 최종 금액은 70,000원이며, 확정·취소의 성공 여부와 거부 후 상태 유지를 출력합니다.
@@ -30,6 +31,8 @@
 9강은 상품 코드 기준 equals·hashCode와 HashSet의 중복 처리를 확인합니다. 같은 코드의 카탈로그 재등록은 거부하고 기존 상품을 유지합니다.
 
 10강은 잘못된 가격·수량·입력·주문 상태를 예외로 거부하고 기존 데이터를 유지합니다. 다음 정상 주문까지 이어서 실행합니다.
+
+11강은 같은 60,000원 주문에 할인 없음과 기본 할인 구현을 전달해 최종 60,000원과 55,000원을 비교합니다. 마우스 추가 후 새 주문은 70,000원이며 기존 주문은 55,000원과 항목 1종류를 유지합니다.
 
 터미널에서는 실행할 강의 폴더 안에서 `./gradlew -q run`을 사용합니다. Windows 명령 프롬프트는 `gradlew.bat -q run`, PowerShell은 `.\gradlew.bat -q run`을 사용합니다. Gradle은 프로젝트에 포함되어 있습니다. 처음 실행할 때는 인터넷 연결이 필요합니다.
 
