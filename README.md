@@ -17,13 +17,14 @@
 | 11강 · 인터페이스로 할인 규칙 교체 | [Main.java](lesson-11/src/main/java/study/javaorder/Main.java) · [DiscountPolicy.java](lesson-11/src/main/java/study/javaorder/DiscountPolicy.java) · [NoDiscountPolicy.java](lesson-11/src/main/java/study/javaorder/NoDiscountPolicy.java) · [ThresholdFixedDiscountPolicy.java](lesson-11/src/main/java/study/javaorder/ThresholdFixedDiscountPolicy.java) · [OrderService.java](lesson-11/src/main/java/study/javaorder/OrderService.java) |
 | 12강 · JUnit 테스트 | [OrderServiceTest.java](lesson-12/src/test/java/study/javaorder/OrderServiceTest.java) · [OrderItemTest.java](lesson-12/src/test/java/study/javaorder/OrderItemTest.java) · [OrderSnapshotTest.java](lesson-12/src/test/java/study/javaorder/OrderSnapshotTest.java) |
 | 13강 · 람다와 Stream 집계 | [Main.java](lesson-13/src/main/java/study/javaorder/Main.java) · [Cart.java](lesson-13/src/main/java/study/javaorder/Cart.java) · [CartAggregationTest.java](lesson-13/src/test/java/study/javaorder/CartAggregationTest.java) |
+| 14강 · 주문 요약 파일 저장과 읽기 | [Main.java](lesson-14/src/main/java/study/javaorder/Main.java) · [ReceiptFileStore.java](lesson-14/src/main/java/study/javaorder/ReceiptFileStore.java) · [ReadReceipt.java](lesson-14/src/main/java/study/javaorder/ReadReceipt.java) |
 
 [전체 코드 ZIP 다운로드](https://github.com/timulys/java-basics-practical/archive/refs/heads/main.zip)
 
 ## 실행 방법
 
 1. ZIP을 내려받아 압축을 풉니다.
-2. IntelliJ에서 실습할 강의 폴더(`lesson-01`부터 `lesson-13`까지)를 엽니다.
+2. IntelliJ에서 실습할 강의 폴더(`lesson-01`부터 `lesson-14`까지)를 엽니다.
 3. 프로젝트 SDK와 Gradle JVM을 **Java 21**로 맞춘 뒤 `src/main/java/study/javaorder/Main.java`를 실행합니다.
 
 1강은 상품 금액 **60000원**, 2강은 최종 금액 **55000원**, 3강과 4강은 최종 금액 **45000원**, 5강과 6강은 상품 금액 **75000원**과 최종 금액 **70000원**이 나옵니다. 6강은 참조·문자열 비교 결과와 null을 포함한 코드 입력 7개의 안내도 출력합니다. 7강도 기본 주문의 최종 금액은 70,000원이며, 확정·취소의 성공 여부와 거부 후 상태 유지를 출력합니다.
@@ -39,6 +40,8 @@
 12강은 JUnit 6.0.3으로 정상 계산, 할인 경계, 수량 0 거부와 주문 보존을 테스트합니다. `lesson-12` 안에서 `./gradlew test`를 실행하면 테스트 8개가 통과합니다. Windows는 `gradlew.bat test` 또는 `.\gradlew.bat test`를 사용합니다.
 
 13강은 반복문과 Stream으로 주변기기 합계 **45,000원**을 구합니다. 문구 합계는 **10,000원**, 일치 상품이 없는 가전 합계는 **0원**입니다. 집계 전후 전체 상품 금액은 **55,000원**으로 유지됩니다. `lesson-13`에서 `./gradlew test`를 실행하면 기존 검증을 포함한 테스트 **16개**가 통과합니다.
+
+14강은 주문 요약을 UTF-8 텍스트 파일로 저장합니다. `lesson-14`에서 `./gradlew -q run`으로 저장한 뒤 `./gradlew -q readReceipt`를 실행하면 이전 요약을 읽습니다. 최종 금액은 **70,000원**이며 테스트 **24개**가 통과합니다. 저장 대상은 요약 문자열입니다.
 
 터미널에서는 실행할 강의 폴더 안에서 `./gradlew -q run`을 사용합니다. Windows 명령 프롬프트는 `gradlew.bat -q run`, PowerShell은 `.\gradlew.bat -q run`을 사용합니다. Gradle은 프로젝트에 포함되어 있습니다. 처음 실행할 때는 인터넷 연결이 필요합니다.
 
